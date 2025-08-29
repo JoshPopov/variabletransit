@@ -160,21 +160,21 @@ export default function VariableTransitPage() {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="rounded-full h-8 w-8 p-0 hover:bg-slate-800/50 transition-all duration-300"
+                className="mobile-touch-feedback mobile-smooth rounded-full h-8 w-8 p-0 hover:bg-slate-800/50 transition-all duration-300"
               >
                 <div className="relative w-4 h-4">
                   <span
-                    className={`absolute block h-0.5 w-4 bg-current transform transition-all duration-300 ${
+                    className={`hamburger-line absolute block h-0.5 w-4 bg-current ${
                       isMenuOpen ? "rotate-45 translate-y-1.5" : "translate-y-0"
                     }`}
                   />
                   <span
-                    className={`absolute block h-0.5 w-4 bg-current transform transition-all duration-300 translate-y-1.5 ${
+                    className={`hamburger-line absolute block h-0.5 w-4 bg-current translate-y-1.5 ${
                       isMenuOpen ? "opacity-0" : "opacity-100"
                     }`}
                   />
                   <span
-                    className={`absolute block h-0.5 w-4 bg-current transform transition-all duration-300 ${
+                    className={`hamburger-line absolute block h-0.5 w-4 bg-current ${
                       isMenuOpen
                         ? "-rotate-45 translate-y-1.5"
                         : "translate-y-3"
@@ -202,7 +202,7 @@ export default function VariableTransitPage() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left text-base font-medium transition-all duration-500 px-4 py-3 rounded-xl hover:bg-slate-800/50 transform ${
+                  className={`mobile-touch-feedback block w-full text-left text-base font-medium transition-all duration-500 px-4 py-3 rounded-xl hover:bg-slate-800/50 transform ${
                     isMenuOpen
                       ? "translate-y-0 opacity-100"
                       : "translate-y-4 opacity-0"
@@ -496,7 +496,7 @@ export default function VariableTransitPage() {
                   {routes.map((route, index) => (
                     <Card
                       key={index}
-                      className={`p-4 cursor-pointer transition-all duration-700 ease-out hover:scale-[1.02] transform ${
+                      className={`route-transition p-4 cursor-pointer transition-all duration-700 ease-out hover:scale-[1.02] transform ${
                         selectedRoute === index
                           ? "bg-slate-700/80 border-blue-500/50 shadow-lg shadow-blue-500/20 scale-[1.01]"
                           : "bg-slate-800/60 border-slate-700/30 hover:bg-slate-700/40"
@@ -547,11 +547,11 @@ export default function VariableTransitPage() {
 
                 <div className="sm:hidden">
                   <div className="relative">
-                    <Card className="p-4 bg-slate-700/80 border-blue-500/50 shadow-lg shadow-blue-500/20 backdrop-blur-xl rounded-2xl transition-all duration-700">
+                    <Card className="route-transition p-4 bg-slate-700/80 border-blue-500/50 shadow-lg shadow-blue-500/20 backdrop-blur-xl rounded-2xl transition-all duration-700">
                       <div className="flex items-center justify-between mb-4">
                         <button
                           onClick={prevRoute}
-                          className="p-2 rounded-full bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 active:scale-95"
+                          className="mobile-touch-feedback p-2 rounded-full bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 active:scale-95"
                         >
                           <ChevronLeft className="h-4 w-4 text-slate-400 transition-colors duration-300 hover:text-white" />
                         </button>
@@ -569,14 +569,14 @@ export default function VariableTransitPage() {
                         </div>
                         <button
                           onClick={nextRoute}
-                          className="p-2 rounded-full bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 active:scale-95"
+                          className="mobile-touch-feedback p-2 rounded-full bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 active:scale-95"
                         >
                           <ChevronRight className="h-4 w-4 text-slate-400 transition-colors duration-300 hover:text-white" />
                         </button>
                       </div>
 
                       <div
-                        className="text-center transition-all duration-700 transform"
+                        className="route-content-transition text-center transition-all duration-700 transform"
                         key={selectedRoute}
                       >
                         <h4 className="text-lg font-semibold text-white mb-2">
@@ -612,7 +612,7 @@ export default function VariableTransitPage() {
                 style={{ animationDelay: "200ms" }}
               >
                 <div
-                  className="bg-slate-800/40 rounded-2xl p-4 backdrop-blur-sm border border-slate-700/20 transition-all duration-700"
+                  className="route-transition route-content-transition bg-slate-800/40 rounded-2xl p-4 backdrop-blur-sm border border-slate-700/20 transition-all duration-700"
                   key={`details-${selectedRoute}`}
                 >
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-all duration-500">
